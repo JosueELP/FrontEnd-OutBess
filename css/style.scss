@@ -114,17 +114,25 @@ html, body {
     li{
         @extend .title-text;
         padding: 5px 10px;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
         transition: all 0.4s;
         &:hover{
-            background-color: rgba(100,100,100,0.8);
+            background-color: rgba(255,255,255,0.8);
         }
         a{
-            @extend .black;
+            @extend .white;
             &:hover{
                 text-decoration: none;
+                @extend .black
             }
         }
     }
+}
+.nav-background{
+    width: 100%;
+    padding-bottom: 5em;
+    background-color: rgba(151, 35, 37, 0.80);
 }
 
 
@@ -152,8 +160,15 @@ html, body {
 .dancing-script{
     font-family: 'Dancing Script', cursive;
 }
+.title{
+    font-size: 5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 2em;
+    margin-top: 0;
+}
 .title-text{
-    font-size: 2em;
+    font-size: 1em;
 }
 .center-text{
     text-align: center;
@@ -162,7 +177,7 @@ html, body {
     color: white;
 }
 .black{
-    color: black;
+    color: rgb(0,0,0);
 }
 .subtittle{
     font-size: 2.5em;
@@ -170,13 +185,32 @@ html, body {
 .medium{
     font-size: 1.5em;
 }
+//Clases de emparejamiento
+.up{
+    z-index: 5;
+}
+.full-height{
+    height: 100%;
+}
+.full-width{
+    width: 100%;
+}
+.remove-margin{
+    margin: 0;
+}
+.no-margin{
+    margin: 0;
+}
+.large-padding{
+    padding: 10px 15px;
+}
 
 //Clases para posicionamiento
 .top{
-    top: 2em;
+    top: 1.5em;
 }
 .right{
-    right: 5em;
+    right: 10em;
 }
 .left{
     left: 0em;

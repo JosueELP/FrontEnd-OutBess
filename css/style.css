@@ -100,15 +100,23 @@ html, body {
 
 .navigation li {
   padding: 5px 10px;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
   transition: all 0.4s;
 }
 
 .navigation li:hover {
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .navigation li a:hover {
   text-decoration: none;
+}
+
+.nav-background {
+  width: 100%;
+  padding-bottom: 5em;
+  background-color: rgba(151, 35, 37, 0.8);
 }
 
 /* ==========================================================================
@@ -123,19 +131,27 @@ html, body {
   font-family: 'Dancing Script', cursive;
 }
 
+.title {
+  font-size: 5em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin-bottom: 2em;
+  margin-top: 0;
+}
+
 .title-text, .navigation li {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .center-text {
   text-align: center;
 }
 
-.white {
+.white, .navigation li a {
   color: white;
 }
 
-.black, .navigation li a {
+.black, .navigation li a:hover {
   color: black;
 }
 
@@ -147,12 +163,36 @@ html, body {
   font-size: 1.5em;
 }
 
+.up {
+  z-index: 5;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.remove-margin {
+  margin: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.large-padding {
+  padding: 10px 15px;
+}
+
 .top {
-  top: 2em;
+  top: 1.5em;
 }
 
 .right {
-  right: 5em;
+  right: 10em;
 }
 
 .left {

@@ -12,13 +12,17 @@
 	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Dancing+Script:700"}
 	%link{:rel => "stylesheet", :href => "css/style.css"}
 	%title OutBess
-%body
-	.image-container
-		.hamburguer{style: "background-image: url(/images/hb.jpg)"}
-	%nav.dancing-script.top.right.fixed.navigation
-		/ Se crea un arreglo para contener los titulos de la barra de navegacion
-		-menu= ["Menú", "Categorias", "Contacto"]
-		%ul.list-inline
-			-menu.each do |item|
-				%li
-					%a{:href => ""}= item
+%body.hamburguer{style: "background-image: url(/images/f1.jpeg); background-repeat: no-repeat"}
+	%header
+		.nav-background
+		%nav.open-sans.top.right.fixed.navigation
+			/ Se crea un arreglo para contener los titulos de la barra de navegacion
+			-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
+			%ul.list-inline
+				-menu.each do |item|
+					%li
+						%a{:href => ""}= item
+	.row.full-height.remove-margin.middle-xs.center-xs
+		.col-xs-12
+			.box.white
+				%h1.title Pollo a la Parrilla
