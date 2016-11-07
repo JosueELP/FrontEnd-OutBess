@@ -157,15 +157,21 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
+.roboto{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.roboto-bold{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
 .dancing-script{
     font-family: 'Dancing Script', cursive;
 }
 .title{
     font-size: 5em;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    margin-bottom: 2em;
-    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 .title-text{
     font-size: 1em;
@@ -185,6 +191,9 @@ html, body {
 .medium{
     font-size: 1.5em;
 }
+.letter-spacing{
+    letter-spacing: 4px;
+}
 //Clases de emparejamiento
 .up{
     z-index: 5;
@@ -198,11 +207,11 @@ html, body {
 .remove-margin{
     margin: 0;
 }
-.no-margin{
-    margin: 0;
-}
 .large-padding{
     padding: 10px 15px;
+}
+.small-padding{
+    padding-bottom: 2em;
 }
 
 //Clases para posicionamiento
