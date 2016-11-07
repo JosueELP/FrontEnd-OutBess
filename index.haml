@@ -15,7 +15,9 @@
 	%title OutBess
 %body.hamburguer{style: "background-image: url(/images/f1.jpeg); background-repeat: no-repeat"}
 	%header
-		.nav-background
+		.row.full-width.remove-margin.fixed
+			.col-xs-12.remove-padding
+				.nav-background
 		%nav.roboto.top.right.fixed.navigation
 			/ Se crea un arreglo para contener los titulos de la barra de navegacion
 			-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
