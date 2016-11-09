@@ -119,6 +119,12 @@ html, body {
   background-color: rgba(151, 35, 37, 0.8);
 }
 
+.flag01 {
+  background-image: url(/images/flag01.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -144,7 +150,7 @@ html, body {
 .title {
   font-size: 5em;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .title-text, .navigation li {
@@ -171,8 +177,12 @@ html, body {
   font-size: 1.5em;
 }
 
-.letter-spacing {
-  letter-spacing: 4px;
+.medium-letter-spacing {
+  letter-spacing: 7px;
+}
+
+.small-letter-spacing {
+  letter-spacing: 2px;
 }
 
 .up {
@@ -196,11 +206,20 @@ html, body {
 }
 
 .large-padding {
-  padding: 10px 15px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .small-padding {
   padding-bottom: 2em;
+}
+
+.padding-top {
+  padding-top: 7em;
+}
+
+.paddint-left {
+  padding-left: 10em;
 }
 
 .top {
