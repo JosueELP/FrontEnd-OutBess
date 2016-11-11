@@ -5,8 +5,9 @@
 	%meta{name:"description", content:"ElectronicFoodOrder, la mejor tecnología para ordenar"}
 	%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 	%script{src:"js/vendor/modernizr-2.8.3.min.js"}
-	%link{:rel => "stylesheet", :href => "css/bootstrap.css"}
+	%script{src:"js/main.js"}
 	%link{:rel => "stylesheet", :href => "css/normalize.css"}
+	%link{:rel => "stylesheet", :href => "css/bootstrap.css"}
 	%link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}
 	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Open+Sans:400,600"}
 	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Roboto:400,500,700"}
@@ -16,15 +17,23 @@
 %body.hamburguer{style: "background-image: url(/images/f1.jpeg); background-repeat: no-repeat"}
 	%header
 		.row.full-width.remove-margin.fixed
-			.col-xs-12.remove-padding
-				.nav-background
-		%nav.roboto.top.right.fixed.navigation
-			/ Se crea un arreglo para contener los titulos de la barra de navegacion
-			-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
-			%ul.list-inline
-				-menu.each do |item|
-					%li
-						%a{:href => ""}= item
+			.col-xs-12.col-lg-12.remove-padding
+				.nav-background.relative
+					.row.remove-margin.absolute
+						.col-xs-12.remove-padding
+							.box
+								%img.logo{:src => "/images/ob1.png", :alt => ""}/
+					.row.remove-margin
+						.col-xs-12.remove-padding
+							.box
+								%nav.roboto.navigation.right.top.fixed#responsive-nav
+									/ Se crea un arreglo para contener los titulos de la barra de navegacion
+									-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
+									%i.glyphicon.glyphicon-menu-hamburger.white.subtittle#responsive-icon
+									%ul.list-inline
+										-menu.each do |item|
+											%li
+												%a{:href => ""}= item
 	.row.full-height.remove-margin.center-xs
 		.row.bottom-xs.full-width
 			.col-xs-12.remove-padding

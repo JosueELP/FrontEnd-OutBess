@@ -5,8 +5,9 @@
   <meta content='ElectronicFoodOrder, la mejor tecnología para ordenar' name='description'>
   <meta content='width=device-width, initial-scale=1' name='viewport'>
   <script src='js/vendor/modernizr-2.8.3.min.js'></script>
-  <link href='css/bootstrap.css' rel='stylesheet'>
+  <script src='js/main.js'></script>
   <link href='css/normalize.css' rel='stylesheet'>
+  <link href='css/bootstrap.css' rel='stylesheet'>
   <link href='https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet'>
@@ -17,30 +18,45 @@
 <body class='hamburguer' style='background-image: url(/images/f1.jpeg); background-repeat: no-repeat'>
   <header>
     <div class='row full-width remove-margin fixed'>
-      <div class='col-xs-12 remove-padding'>
-        <div class='nav-background'></div>
+      <div class='col-xs-12 col-lg-12 remove-padding'>
+        <div class='nav-background relative'>
+          <div class='row remove-margin absolute'>
+            <div class='col-xs-12 remove-padding'>
+              <div class='box'>
+                <img alt='' class='logo' src='/images/ob1.png'>
+              </div>
+            </div>
+          </div>
+          <div class='row remove-margin'>
+            <div class='col-xs-12 remove-padding'>
+              <div class='box'>
+                <nav class='roboto navigation right top fixed' id='responsive-nav'>
+                  <!-- Se crea un arreglo para contener los titulos de la barra de navegacion -->
+                  <i class='glyphicon glyphicon-menu-hamburger white subtittle' id='responsive-icon'></i>
+                  <ul class='list-inline'>
+                    <li>
+                      <a href=''>HOME</a>
+                    </li>
+                    <li>
+                      <a href=''>GALLERY</a>
+                    </li>
+                    <li>
+                      <a href=''>NEWS</a>
+                    </li>
+                    <li>
+                      <a href=''>RESERVATION</a>
+                    </li>
+                    <li>
+                      <a href=''>CONTACT</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <nav class='roboto top right fixed navigation'>
-      <!-- Se crea un arreglo para contener los titulos de la barra de navegacion -->
-      <ul class='list-inline'>
-        <li>
-          <a href=''>HOME</a>
-        </li>
-        <li>
-          <a href=''>GALLERY</a>
-        </li>
-        <li>
-          <a href=''>NEWS</a>
-        </li>
-        <li>
-          <a href=''>RESERVATION</a>
-        </li>
-        <li>
-          <a href=''>CONTACT</a>
-        </li>
-      </ul>
-    </nav>
   </header>
   <div class='row full-height remove-margin center-xs'>
     <div class='row bottom-xs full-width'>

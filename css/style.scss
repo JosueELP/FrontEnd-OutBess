@@ -139,13 +139,19 @@ html, body {
     background-repeat: no-repeat; 
     background-position: center;
 }
+.logo{
+    width: 22%;
+    padding-left: 3em;
+    padding-top: 0em;
+}
 
 
 
+/* ID'S */
 
-
-
-
+#responsive-icon{
+    display: none;
+}
 
 
 
@@ -234,10 +240,10 @@ html, body {
     top: 1.5em;
 }
 .right{
-    right: 10em;
+    right: 20em;
 }
 .left{
-    left: 0em;
+    left: 1em;
 }
 .bottom{
     bottom: 0em;
@@ -331,6 +337,36 @@ html, body {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (max-width: 1178px){
+    #responsive-nav{
+        ul{
+            position: fixed;
+            width: 100%;
+            font-size: 1.5em;
+            top: 71px;
+            right: 0px;
+            left: 5px;
+            text-align: center;
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.4s;
+            background-color: rgba(151, 35, 37, 0.80);
+            &.active{
+                max-height: 80vh;
+            }
+            li{
+                display: block;
+                margin-top: 0em;
+                padding: 8px 10px;
+            }
+        }
+    }
+    #responsive-icon{
+        display: block;
+        left: 6em;
+    }
 }
 
 @media print,
