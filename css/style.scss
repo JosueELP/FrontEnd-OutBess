@@ -131,8 +131,10 @@ html, body {
 }
 .nav-background{
     width: 100%;
-    padding-bottom: 5em;
+    height: 12%;
+    padding-bottom: 0em;
     background-color: rgba(151, 35, 37, 0.80);
+    z-index: 5;
 }
 .flag01{
     background-image: url(/images/flag01.png);
@@ -140,12 +142,12 @@ html, body {
     background-position: center;
 }
 .logo{
-    width: 22%;
+    width: 300px;
+    height: 80px;
     padding-left: 3em;
-    padding-top: 0em;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-
-
 
 /* ID'S */
 
@@ -229,7 +231,7 @@ html, body {
     padding-bottom: 2em;
 }
 .padding-top{
-    padding-top: 7em;
+    padding-top: 5em;
 }
 .paddint-left{
     padding-left: 10em;
@@ -256,6 +258,9 @@ html, body {
 }
 .absolute{
     position: absolute;
+}
+.z-index{
+    z-index: 100;
 }
 
 
@@ -345,7 +350,7 @@ html, body {
             position: fixed;
             width: 100%;
             font-size: 1.5em;
-            top: 71px;
+            top: 77px;
             right: 0px;
             left: 5px;
             text-align: center;

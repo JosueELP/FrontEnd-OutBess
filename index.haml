@@ -5,7 +5,6 @@
 	%meta{name:"description", content:"ElectronicFoodOrder, la mejor tecnología para ordenar"}
 	%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 	%script{src:"js/vendor/modernizr-2.8.3.min.js"}
-	%script{src:"js/main.js"}
 	%link{:rel => "stylesheet", :href => "css/normalize.css"}
 	%link{:rel => "stylesheet", :href => "css/bootstrap.css"}
 	%link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}
@@ -15,25 +14,17 @@
 	%link{:rel => "stylesheet", :href => "css/style.css"}
 	%title OutBess
 %body.hamburguer{style: "background-image: url(/images/f1.jpeg); background-repeat: no-repeat"}
-	%header
-		.row.full-width.remove-margin.fixed
-			.col-xs-12.col-lg-12.remove-padding
-				.nav-background.relative
-					.row.remove-margin.absolute
-						.col-xs-12.remove-padding
-							.box
-								%img.logo{:src => "/images/ob1.png", :alt => ""}/
-					.row.remove-margin
-						.col-xs-12.remove-padding
-							.box
-								%nav.roboto.navigation.right.top.fixed#responsive-nav
-									/ Se crea un arreglo para contener los titulos de la barra de navegacion
-									-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
-									%i.glyphicon.glyphicon-menu-hamburger.white.subtittle#responsive-icon
-									%ul.list-inline
-										-menu.each do |item|
-											%li
-												%a{:href => ""}= item
+	.row.full-width.nav-background.fixed.remove-margin
+		%img.logo#responsive-logo{:src => "/images/ob1.png", :alt => ""}/
+		%nav.roboto.navigation.right.top.fixed#responsive-nav
+			/ Se crea un arreglo para contener los titulos de la barra de navegacion
+			-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
+			%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
+			%ul.list-inline
+				-menu.each do |item|
+					%li
+						%a{:href => ""}= item
+
 	.row.full-height.remove-margin.center-xs
 		.row.bottom-xs.full-width
 			.col-xs-12.remove-padding
@@ -44,7 +35,14 @@
 			.col-xs-12.remove-padding
 				.box.padding-top
 					%p.roboto.white.medium.remove-margin.flag01.large-padding.small-letter-spacing POLLO A LA PARRILLA
+
+
 	.row.full-width.full-height.remove-margin.center-xs
 		.col-xs-12.remove-padding
 			.box.black
 				%p.subtittle.letter-spacing.roboto-bold.padding-top *COMMING UP*
+
+	%script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin:"anonymous"}
+	%script
+		window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>")
+	%script{src:"js/main.js"}
