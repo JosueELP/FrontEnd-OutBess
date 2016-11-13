@@ -1,3 +1,8 @@
+/ Se crea un arreglo para contener los titulos de la barra de navegacion
+-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
+/ Se crea un hash para los titulos y descripciones de cada categoria
+-menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}]
+
 <!DOCTYPE html>
 %html{class:"no-js", lang: "es"}
 %head
@@ -14,17 +19,18 @@
 	%link{:rel => "stylesheet", :href => "css/style.css"}
 	%title OutBess
 %body.hamburguer{style: "background-image: url(/images/f1.jpeg); background-repeat: no-repeat"}
+	/ Barra de navegación
 	.row.full-width.nav-background.fixed.remove-margin
-		%img.logo#responsive-logo{:src => "/images/ob1.png", :alt => ""}/
-		%nav.roboto.navigation.right.top.fixed#responsive-nav
-			/ Se crea un arreglo para contener los titulos de la barra de navegacion
-			-menu= ["HOME", "GALLERY", "NEWS", "RESERVATION", "CONTACT"]
-			%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
-			%ul.list-inline
-				-menu.each do |item|
-					%li
-						%a{:href => ""}= item
+		.col-xs-12.remove-padding
+			%img.logo#responsive-logo{:src => "/images/ob1.png", :alt => ""}/
+			%nav.roboto.navigation.right.top.fixed#responsive-nav
+				%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
+				%ul.list-inline
+					-menu.each do |item|
+						%li
+							%a{:href => ""}= item
 
+	/ Sección Pagina Central
 	.row.full-height.remove-margin.center-xs
 		.row.bottom-xs.full-width
 			.col-xs-12.remove-padding
@@ -34,13 +40,32 @@
 		.row.top-xs.full-width.middle-xs
 			.col-xs-12.remove-padding
 				.box.padding-top
-					%p.roboto.white.medium.remove-margin.flag01.large-padding.small-letter-spacing POLLO A LA PARRILLA
+					%p.roboto.white.medium.remove-margin.large-padding.small-letter-spacing.flag{style: "background-image: url(/images/flag01.png);"} POLLO A LA PARRILLA
 
-
-	.row.full-width.full-height.remove-margin.center-xs
+	/ Sección Categorias
+	.row-full-width.remove-margin.center-xs
 		.col-xs-12.remove-padding
-			.box.black
-				%p.subtittle.letter-spacing.roboto-bold.padding-top *COMMING UP*
+			.box
+				%img.flag02.padding-top#categories{:src => "/images/flag02.png", :alt => ""}/
+	.row.full-width.full-height.remove-margin
+		.col-xs-12.remove-padding
+			.box
+				.row.full-width.remove-margin.center-xs
+					.col-xs-12.remove-padding
+						.box.black
+							%h2.subtittle.medium-letter-spacing.roboto-bold *COMING UP*
+							%h3.dancing-script.remove-margin.small-letter-spacing.small-padding Pollo a la Parrilla
+				.row.full-width.remove-margin#padding-bottom
+					-menu_categories.each do |photo|
+						.col-md-4.col-lg-3.col-sm-6.col-xs-12.medium-padding
+							.div.category_img{style: "background-image: url(/images/Categories/#{photo[:image]})"}
+								.div.ctg_img_bckgr.black{onclick: "location.href='#'"}
+									%h3.dancing-script.padding-left.small-letter-spacing#padding-top= photo[:name]
+									%p.roboto.white.small.padding-left= photo[:description]
+				.row.full-width.remove-margin.center-xs
+					.col-xs-12.remove-padding
+						.div.white
+							%p.open-sans.flag.medium-padding{style: "background-image: url(/images/flag01_sm.png); background-repeat: no-repeat;"} DISFRUTA DE NUESTROS MENUS
 
 	%script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin:"anonymous"}
 	%script
