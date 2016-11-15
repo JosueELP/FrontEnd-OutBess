@@ -87,11 +87,12 @@ html, body {
   height: 100%;
 }
 
-.hamburguer {
+.background {
   height: 100%;
   background-size: cover;
   background-position: center;
   padding: 0px;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -152,6 +153,12 @@ html, body {
   background-color: RGBA(231, 207, 69, 1);
 }
 
+.special-menu {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+}
+
 /* ID'S */
 #responsive-icon {
   display: none;
@@ -168,6 +175,14 @@ html, body {
 #flag02 {
   padding: 16px 0px;
   background-size: 27em 3em;
+}
+
+#special-menu {
+  height: 40em;
+}
+
+#special-menu-padding {
+  padding-top: 1.5em;
 }
 
 /* ==========================================================================
@@ -273,6 +288,10 @@ html, body {
 
 .padding-left {
   padding-left: 15px;
+}
+
+.padding-bottom {
+  padding-bottom: 5em;
 }
 
 .top {
@@ -409,9 +428,6 @@ html, body {
   #responsive-icon {
     display: block;
     left: 6em;
-  }
-  #categories {
-    padding-top: 0px;
   }
 }
 

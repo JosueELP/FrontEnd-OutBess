@@ -98,12 +98,13 @@ html, body {
     height: 100%;
 
 }
-//Clase hamburguer cuyo proposito es acomodar la imagen lo mejor posible con el tamaño que tiene
-.hamburguer{
+//Clase background cuyo proposito es acomodar la imagen lo mejor posible con el tamaño que tiene
+.background{
     height: 100%;
     background-size: cover;
     background-position: center;
     padding: 0px;
+    background-repeat: no-repeat;
 }
 //Clase header que contiene la barra de navegacion
 .header{
@@ -162,6 +163,11 @@ html, body {
     padding-bottom: 2.1em;
     background-color: RGBA(231, 207, 69, 1.00);
 }
+.special-menu{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80%;
+}
 
 /* ID'S */
 
@@ -178,7 +184,12 @@ html, body {
     padding: 16px 0px;
     background-size: 27em 3em;
 }
-
+#special-menu{
+    height: 40em;
+}
+#special-menu-padding{
+    padding-top: 1.5em;
+}
 
 /* ==========================================================================
    Helper classes
@@ -263,6 +274,9 @@ html, body {
 }
 .padding-left{
     padding-left: 15px;
+}
+.padding-bottom{
+    padding-bottom: 5em;
 }
 
 //Clases para posicionamiento
@@ -403,9 +417,6 @@ html, body {
     #responsive-icon{
         display: block;
         left: 6em;
-    }
-    #categories{
-        padding-top: 0px;
     }
 }
 
