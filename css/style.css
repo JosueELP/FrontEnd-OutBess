@@ -150,7 +150,6 @@ html, body {
   margin-top: 15em;
   padding-bottom: 2.1em;
   background-color: RGBA(231, 207, 69, 1);
-  cursor: pointer;
 }
 
 /* ID'S */
@@ -164,6 +163,11 @@ html, body {
 
 #padding-bottom {
   padding-bottom: 5em;
+}
+
+#flag02 {
+  padding: 16px 0px;
+  background-size: 27em 3em;
 }
 
 /* ==========================================================================
@@ -301,6 +305,11 @@ html, body {
 
 .z-index {
   z-index: 100;
+}
+
+/* Cursores */
+.pointer {
+  cursor: pointer;
 }
 
 /*

@@ -1,24 +1,26 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
--menu= [{name: "HOME", url:"#"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
+-menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
 / Se crea un hash para los titulos y descripciones de cada categoria
--menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}]
+-menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}]
 
 <!DOCTYPE html>
 %html{class:"no-js", lang: "es"}
 %head
+	%meta{:charset => "UTF-8"}/
 	%meta{:charset => "UTF-8"}
 	%meta{name:"description", content:"OutBess, la mejor tecnología para ordenar"}
 	%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
-	%script{src:"js/vendor/modernizr-2.8.3.min.js"}
-	%link{:rel => "stylesheet", :href => "css/normalize.css"}
-	%link{:rel => "stylesheet", :href => "css/bootstrap.css"}
+	%script{src:"../js/vendor/modernizr-2.8.3.min.js"}
+	%link{:rel => "stylesheet", :href => "../css/normalize.css"}
+	%link{:rel => "stylesheet", :href => "../css/bootstrap.css"}
 	%link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}
 	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Open+Sans:400,600"}
 	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Roboto:400,500,700"}
 	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Dancing+Script"}
-	%link{:rel => "stylesheet", :href => "css/style.css"}
-	%title OutBess
-%body.hamburguer{style: "background-image: url(/images/f1.jpeg); background-repeat: no-repeat"}
+	%link{:rel => "stylesheet", :href => "../css/style.css"}
+	%title OutBess Categories
+%body
+	
 	/ Barra de navegación
 	.row.full-width.nav-background.fixed.remove-margin
 		.col-xs-12.remove-padding
@@ -30,19 +32,7 @@
 						%li
 							%a{:href => "#{item[:url]}"}= item[:name]
 
-	/ Sección Pagina Central
-	.row.full-height.remove-margin.center-xs
-		.row.bottom-xs.full-width
-			.col-xs-12.remove-padding
-				.box.white.padding-top
-					%h1.title.remove-margin.medium-letter-spacing POLLO A LA PARRILLA
-					%h2.dancing-script.remove-margin.small-padding.small-letter-spacing Pollo a la parrilla
-		.row.top-xs.full-width.middle-xs
-			.col-xs-12.remove-padding
-				.box.padding-top
-					%p.roboto.white.medium.remove-margin.large-padding.small-letter-spacing.flag{style: "background-image: url(/images/flag01.png);"} POLLO A LA PARRILLA
-
-	/ Sección Categorias
+	/ Categorias
 	.row-full-width.remove-margin.center-xs
 		.col-xs-12.remove-padding
 			.box
@@ -53,8 +43,8 @@
 				.row.full-width.remove-margin.center-xs
 					.col-xs-12.remove-padding
 						.box.black
-							%h2.subtittle.medium-letter-spacing.roboto-bold *CATEGORIAS DESTACADAS*
-							%h3.dancing-script.remove-margin.small-letter-spacing.small-padding Pollo a la Parrilla
+							%h2.subtittle.medium-letter-spacing.roboto-bold *CATEGORIAS*
+							%h3.dancing-script.remove-margin.small-letter-spacing.small-padding Disfruta de nuestra selección
 				.row.full-width.remove-margin#padding-bottom
 					-menu_categories.each do |photo|
 						.col-md-4.col-lg-3.col-sm-6.col-xs-12.medium-padding
@@ -62,13 +52,10 @@
 								.div.ctg_img_bckgr.black.pointer{onclick: "location.href='#'"}
 									%h3.dancing-script.padding-left.small-letter-spacing#padding-top= photo[:name]
 									%p.roboto.white.small.padding-left= photo[:description]
-				.row.full-width.remove-margin.center-xs
-					.col-xs-12.remove-padding
-						.div.white
-							%p.open-sans.flag.pointer#flag02{style: "background-image: url(/images/flag01_sm.png);", onclick: "location.href='/categories/categories.html'"} DISFRUTA DE TODAS NUESTRAS CATEGORIAS
+
 
 	/ JQUERY and JavaScript
 	%script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin:"anonymous"}
 	%script
 		window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>")
-	%script{src:"js/main.js"}
+	%script{src:"../js/main.js"}
