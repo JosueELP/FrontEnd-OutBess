@@ -153,6 +153,20 @@ html, body {
   background-color: RGBA(231, 207, 69, 1);
 }
 
+.food {
+  margin-top: 10px;
+  background-size: 100%;
+  background-image: url(../images/flag01_sm.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+.food:hover {
+  text-decoration: none;
+}
+
 .special-menu {
   background-repeat: no-repeat;
   background-size: cover;
@@ -166,6 +180,10 @@ html, body {
 
 #padding-top {
   padding-top: 15px;
+}
+
+#padding-top-food {
+  padding-top: 10px;
 }
 
 #padding-bottom {
@@ -428,6 +446,12 @@ html, body {
   #responsive-icon {
     display: block;
     left: 6em;
+  }
+  #categories {
+    padding-top: 5em;
+  }
+  #home {
+    padding-top: 0px;
   }
 }
 

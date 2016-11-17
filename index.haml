@@ -1,7 +1,7 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
 -menu= [{name: "HOME", url:"#"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
 / Se crea un hash para los titulos y descripciones de cada categoria
--menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}, {name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS"}]
+-menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url: "breakfast.html"}, {name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url: "#"}, {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url: "#"}, {name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url: "#"}]
 
 <!DOCTYPE html>
 %html{class:"no-js", lang: "es"}
@@ -47,7 +47,7 @@
 	.row-full-width.remove-margin.center-xs
 		.col-xs-12.remove-padding
 			.box
-				%img.flag02.padding-top#categories{:src => "/images/flag02.png", :alt => ""}/
+				%img.flag02.padding-top#home{:src => "/images/flag02.png", :alt => ""}/
 	.row.full-width.full-height.remove-margin
 		.col-xs-12.remove-padding
 			.box
@@ -60,7 +60,7 @@
 					-menu_categories.each do |photo|
 						.col-md-4.col-lg-3.col-sm-6.col-xs-12.medium-padding
 							.div.category_img{style: "background-image: url(/images/Categories/#{photo[:image]})"}
-								.div.ctg_img_bckgr.black.pointer{onclick: "location.href='#'"}
+								.div.ctg_img_bckgr.black.pointer{onclick: "location.href='/categories/#{photo[:url]}'"}
 									%h3.dancing-script.padding-left.small-letter-spacing#padding-top= photo[:name]
 									%p.roboto.white.small.padding-left= photo[:description]
 				.row.full-width.remove-margin.center-xs

@@ -1,5 +1,7 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
 -menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
+/ Se crea un hash que contendra la imagen y el id de cada platillo de la categoria
+-plates= [{name: "Ejemplo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto temporibus possimus!", image:"1.jpg" , id: ""}, {name: "Ejemplo2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aperiam repellendus optio.", image:"1.jpg" , id: ""}, {name: "Ejemplo3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit excepturi, soluta velit.", image:"1.jpg" , id: ""}, {name: "Ejemplo4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae, mollitia velit.", image:"1.jpg" , id: ""}, {name: "Ejemplo5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum veniam modi dolores.", image:"1.jpg" , id: ""}, {name: "Ejemplo6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: ""}, {name: "Ejemplo7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: ""}, {name: "Ejemplo8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: ""},]
 
 <!DOCTYPE html>
 %html{class:"no-js", lang: "es"}
@@ -36,18 +38,24 @@
 				%img.flag02.padding-top{:src => "../images/flag02_inv.png", :alt => ""}/
 
 	.row.full-width.remove-margin.center-xs
-		.col-xs-10.remove-padding.special-menu#special-menu{style: "background-image: url(../images/f1.jpeg);"}
+		.col-xs-11.remove-padding.special-menu#special-menu{style: "background-image: url(../images/f1.jpeg);"}
 			.div.padding-top.white
 				%h2.title.remove-margin.medium-letter-spacing#special-menu-padding DESAYUNOS
 				%h3.dancing-script.remove-margin.small-padding.small-letter-spacing.padding-bottom Pollo a la parrilla
-				%p.roboto.white.medium.remove-margin.large-padding.small-letter-spacing.flag{style: "background-image: url(/images/flag01.png);"} ESPECIAL DE LA CENA
+				%p.roboto.white.medium.remove-margin.large-padding.small-letter-spacing.flag{style: "background-image: url(/images/flag01.png);"} ESPECIAL DE DESAYUNO
 
 	.row.full-width.remove-margin.center-xs
 		.col-xs-12.remove-padding
 			.div
-				%img.flag02{:src => "../images/flag02.png", :alt => ""}/
+				%img.flag02.padding-bottom{:src => "../images/flag02.png", :alt => ""}/
 
 	/ Menu de cada categoria
+	.row.full-width.remove-margin#padding-bottom
+		-plates.each do |photo|
+			.col-md-4.col-lg-3.col-sm-6.col-xs-12.medium-padding
+				.div.category_img{style: "background-image: url(/images/Food/Breakfast/#{photo[:image]})"}
+				.div.black.pointer{onclick: "location.href='#'"}
+					%h4.food.white.center-text.roboto.padding-left.small-letter-spacing#padding-top-food= photo[:name]
 
 	/ JQUERY and JavaScript
 	%script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin:"anonymous"}
