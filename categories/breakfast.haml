@@ -1,7 +1,9 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
 -menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
 / Se crea un hash que contendra la imagen y el id de cada platillo de la categoria
--plates= [{name: "Ejemplo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto temporibus possimus!", image:"1.jpg" , id: ""}, {name: "Ejemplo2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aperiam repellendus optio.", image:"1.jpg" , id: ""}, {name: "Ejemplo3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit excepturi, soluta velit.", image:"1.jpg" , id: ""}, {name: "Ejemplo4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae, mollitia velit.", image:"1.jpg" , id: ""}, {name: "Ejemplo5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum veniam modi dolores.", image:"1.jpg" , id: ""}, {name: "Ejemplo6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: ""}, {name: "Ejemplo7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: ""}, {name: "Ejemplo8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: ""},]
+-plates= [{name: "Ejemplo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto temporibus possimus!", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aperiam repellendus optio.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit excepturi, soluta velit.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae, mollitia velit.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum veniam modi dolores.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"},]
+/ Hash para los ingredientes
+-ingredients= ["Sedis", "Asseces", "Enducipsam", "Es dem si", "Ut quiam", "Sectium"]
 
 <!DOCTYPE html>
 %html{class:"no-js", lang: "es"}
@@ -56,6 +58,46 @@
 				.div.category_img{style: "background-image: url(/images/Food/Breakfast/#{photo[:image]})"}
 				.div.black.pointer{onclick: "location.href='#'"}
 					%h4.food.white.center-text.roboto.padding-left.small-letter-spacing#padding-top-food= photo[:name]
+
+	/ Descripción para cada platillo
+	-plates.each do |plate|
+		.row.full-width.full-height.remove-margin.center-lg
+			.col-lg-11.col-xs-12.remove-padding.food-order{style: "background-color: rgba(0, 0, 0, 0.6)"}
+				.row.full-width.full-height.remove-margin
+					.col-lg-6.col-sm-6.col-xs-12#food-order
+						/ Boton ORDENAR
+						.order-button
+							%i.glyphicon.glyphicon-log-in.medium
+							%p.open-sans.medium.center-text.remove-margin#order-button ORDENAR
+						/ Imagen del platillo
+						.food-image{style: "background-image: url(../images/Food/Breakfast/#{plate[:image]})"}
+						/ Precio del platillo
+						.food-pricing#padding-top
+							%p.open-sans.center-text.white PRECIO: $#{plate[:price]}
+
+					.col-lg-6.col-sm-6.col-xs-12
+						/ Nombre del platillo
+						.food-name
+							%h3.flag.center-text.white.medium-letter-spacing#food-name{style: "background-image: url(/images/flag01.png);"} #{plate[:name]}
+						/ Descripción del platillo
+						.food-description
+							%p.white.open-sans#padding-top #{plate[:description]}
+						/ Ingredientes
+						.food-ingredients
+							%h4.flag.center-text.white.small-letter-spacing#food-ingredient{style: "background-image: url(/images/flag03.png);"} INGREDIENTS
+							.row.full-width.full-height.remove-margin#padding-top
+								.col-xs-6
+									-ingredients.each do |ingredient|
+										%p.white.small-letter.spacing.open-sans.right-text.title-text= ingredient
+								.col-xs-6
+									-ingredients.each do |ingredient2|
+										.row.full-width.remove-margin.middle-xs.ingredient-background{style: "margin-bottom: 10px"}
+											.col-xs-2
+												%i.glyphicon.glyphicon-plus-sign
+											.col-xs-8
+												%p.remove-margin.center-text AGREGAR
+											.col-xs-2
+												%i.glyphicon.glyphicon-minus-sign
 
 	/ JQUERY and JavaScript
 	%script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin:"anonymous"}

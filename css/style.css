@@ -173,7 +173,74 @@ html, body {
   height: 80%;
 }
 
+.food-order {
+  height: 95%;
+  border-radius: 15px;
+}
+
+.order-button {
+  margin-top: 8px;
+}
+
+.order-button i {
+  top: 29px;
+  right: 70px;
+}
+
+.food-image {
+  margin-top: 15px;
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.food-name {
+  margin-top: 30px;
+}
+
+.food-description {
+  margin: 0px 25px;
+}
+
+.food-ingredients {
+  padding-top: 10px;
+  margin: 0px 120px;
+}
+
+.ingredient-background {
+  background-color: RGBA(255, 235, 80, 1);
+}
+
+.plate {
+  top: -100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: top 0.6s;
+}
+
 /* ID'S */
+#food-ingredient {
+  padding: 5px 0px;
+  background-size: 100%;
+}
+
+#food-name {
+  background-size: 100%;
+  padding: 10px 0px;
+}
+
+#food-order {
+  padding: 0px 40px;
+}
+
+#order-button {
+  border-radius: 3px;
+  background-color: RGBA(255, 235, 80, 1);
+  margin: 0px 8em;
+}
+
 #responsive-icon {
   display: none;
 }
@@ -237,6 +304,10 @@ html, body {
 
 .center-text {
   text-align: center;
+}
+
+.right-text {
+  text-align: right;
 }
 
 .white, .navigation li a {
@@ -310,6 +381,10 @@ html, body {
 
 .padding-bottom {
   padding-bottom: 5em;
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .top {
@@ -452,6 +527,26 @@ html, body {
   }
   #home {
     padding-top: 0px;
+  }
+  #order-button {
+    background-color: RGBA(255, 235, 80, 1);
+    margin: 0px 4em;
+  }
+  #food-order {
+    padding: 0px 5px;
+  }
+  .order-button i {
+    right: 0;
+    left: 95px;
+  }
+  .food-name {
+    margin: 0px 10px;
+  }
+  .food-description {
+    margin: 0px 10px;
+  }
+  .food-ingredients {
+    margin: 0px 60px;
   }
 }
 
