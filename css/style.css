@@ -213,11 +213,10 @@ html, body {
 }
 
 .plate {
-  top: -100%;
-  position: relative;
+  position: fixed;
   height: 100%;
   width: 100%;
-  transition: top 0.6s;
+  top: 100%;
 }
 
 /* ID'S */

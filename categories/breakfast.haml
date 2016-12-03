@@ -52,17 +52,23 @@
 				%img.flag02.padding-bottom{:src => "../images/flag02.png", :alt => ""}/
 
 	/ Menu de cada categoria
+	-plate= 0
 	.row.full-width.remove-margin#padding-bottom
 		-plates.each do |photo|
 			.col-md-4.col-lg-3.col-sm-6.col-xs-12.medium-padding
 				.div.category_img{style: "background-image: url(/images/Food/Breakfast/#{photo[:image]})"}
-				.div.black.pointer{onclick: "location.href='#'"}
+				.div.black.pointer#plate{:id => "#{plate}"}
 					%h4.food.white.center-text.roboto.padding-left.small-letter-spacing#padding-top-food= photo[:name]
+					-plate+=1	
 
 	/ Descripción para cada platillo
+	-index= 0
 	-plates.each do |plate|
-		.row.full-width.full-height.remove-margin.center-lg
-			.col-lg-11.col-xs-12.remove-padding.food-order{style: "background-color: rgba(0, 0, 0, 0.6)"}
+		.row.full-width.full-height.remove-margin.center-lg.plate#id{:id => "#{index}"}
+			.col-lg-11.col-xs-12.remove-padding.food-order{style: "background-color: rgba(0, 0, 0, 0.90)"}
+				.row.full-width.remove-margin.end-xs
+					.col-xs-12
+						%i.glyphicon.white.subtittle.glyphicon-remove.medium-padding#close{:id => "#{index}"}
 				.row.full-width.full-height.remove-margin
 					.col-lg-6.col-sm-6.col-xs-12#food-order
 						/ Boton ORDENAR
@@ -98,6 +104,7 @@
 												%p.remove-margin.center-text AGREGAR
 											.col-xs-2
 												%i.glyphicon.glyphicon-minus-sign
+						-index+=1
 
 	/ JQUERY and JavaScript
 	%script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=", crossorigin:"anonymous"}
