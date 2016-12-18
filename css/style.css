@@ -174,8 +174,7 @@ html, body {
 }
 
 .food-order {
-  height: 95%;
-  border-radius: 15px;
+  height: 100%;
 }
 
 .order-button {
@@ -217,6 +216,10 @@ html, body {
   height: 100%;
   width: 100%;
   top: 100%;
+}
+
+.order {
+  right: 5em;
 }
 
 /* ID'S */
@@ -269,6 +272,29 @@ html, body {
   padding-top: 1.5em;
 }
 
+#contact-text {
+  padding-left: 10%;
+}
+
+#contact-text p {
+  margin: 0;
+}
+
+#leave-message {
+  margin-top: 3em;
+  padding: 10px 10px;
+  border: RGBA(210, 188, 62, 1) 2px solid;
+}
+
+#order {
+  background-color: RGBA(255, 235, 80, 1);
+}
+
+#order:hover {
+  background-color: black;
+  color: RGBA(255, 235, 80, 1);
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -305,6 +331,10 @@ html, body {
   text-align: center;
 }
 
+.left-text {
+  text-align: left;
+}
+
 .right-text {
   text-align: right;
 }
@@ -313,8 +343,16 @@ html, body {
   color: white;
 }
 
-.black, .navigation li a:hover {
+.black, .navigation li:hover a {
   color: black;
+}
+
+.yellow {
+  color: RGBA(210, 188, 62, 1);
+}
+
+.gray {
+  color: RGBA(168, 168, 168, 1);
 }
 
 .subtittle {
@@ -391,7 +429,7 @@ html, body {
 }
 
 .right {
-  right: 20em;
+  right: 10em;
 }
 
 .left {
@@ -416,6 +454,10 @@ html, body {
 
 .z-index {
   z-index: 100;
+}
+
+.inline {
+  display: inline-block;
 }
 
 /* Cursores */
@@ -495,7 +537,20 @@ html, body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (max-width: 385px) {
+  .logo {
+    width: 200px;
+    height: 60px;
+    padding-left: 0.5em;
+    padding-top: 5px;
+    padding-bottom: 0px;
+  }
+}
+
 @media only screen and (max-width: 1178px) {
+  #responsive-nav {
+    right: 20em;
+  }
   #responsive-nav ul {
     position: fixed;
     width: 100%;
@@ -533,6 +588,9 @@ html, body {
   }
   #food-order {
     padding: 0px 5px;
+  }
+  #contact-text {
+    padding-left: 5%;
   }
   .order-button i {
     right: 0;

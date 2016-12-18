@@ -1,0 +1,64 @@
+<!-- Se crea un hash para contener los titulos de la barra de navegacion -->
+<!-- Arreglo para el numero de secciones de galeria -->
+<!-- Hash para las imagenes de cada sección -->
+<!DOCTYPE html>
+<html class='no-js' lang='es'></html>
+<head>
+  <meta charset='UTF-8'>
+  <meta content='OutBess, la mejor tecnología para ordenar' name='description'>
+  <meta content='width=device-width, initial-scale=1' name='viewport'>
+  <script src='../js/vendor/modernizr-2.8.3.min.js'></script>
+  <link href='../css/normalize.css' rel='stylesheet'>
+  <link href='../css/bootstrap.css' rel='stylesheet'>
+  <link href='https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet'>
+  <link href='../css/style.css' rel='stylesheet'>
+  <title>Gallery</title>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <div class='row full-width nav-background fixed remove-margin'>
+    <div class='col-xs-12 remove-padding'>
+      <img alt='' class='logo' id='responsive-logo' src='/images/ob1.png'>
+      <nav class='roboto navigation right top fixed' id='responsive-nav'>
+        <i class='glyphicon glyphicon-menu-hamburger white subtittle glyphicon-remove' id='responsive-icon'></i>
+        <ul class='list-inline'>
+          <li>
+            <a href='../index.html'>HOME</a>
+          </li>
+          <li>
+            <a href='#'>GALLERY</a>
+          </li>
+          <li>
+            <a href='#'>NEWS</a>
+          </li>
+          <li>
+            <a href='#'>RESERVATION</a>
+          </li>
+          <li>
+            <a href='#'>CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- Primera pagina de imagenes -->
+  <div class='row full-width full-height remove-margin' id='gallery'>
+    <div class='col-xs-12 remove-padding'>
+      <div class='row full-width full-height remove-margin'>
+        <div class='col-lg-6 col-md-6 col-xs-12 remove-padding'>
+          <!-- .div{style: "background-image: url(/images/Rooms/#{photo[:image_es]})"} -->
+        </div>
+        <div class='col-lg-6 col-md-6 col-xs-12 remove-padding'></div>
+      </div>
+    </div>
+  </div>
+  <!-- JQUERY and JavaScript -->
+  <script crossorigin='anonymous' integrity='sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=' src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+  <script>
+    window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>")
+  </script>
+  <script src='../js/main.js'></script>
+</body>

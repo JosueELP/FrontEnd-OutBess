@@ -1,7 +1,7 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
--menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
+-menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"../contact/contact.html"}]
 / Se crea un hash que contendra la imagen y el id de cada platillo de la categoria
--plates= [{name: "Ejemplo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto temporibus possimus!", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aperiam repellendus optio.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit excepturi, soluta velit.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae, mollitia velit.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum veniam modi dolores.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, {name: "Ejemplo8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"},]
+-plates= [{name: "Ejemplo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto temporibus possimus!", image:"1.jpg" , id: "", price: "100.00"}, 																			  {name: "Ejemplo2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aperiam repellendus optio.", image:"1.jpg" , id: "", price: "100.00"}, 		   {name: "Ejemplo3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit excepturi, soluta velit.", image:"1.jpg" , id: "", price: "100.00"}, 	{name: "Ejemplo4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae, mollitia velit.", image:"1.jpg" , id: "", price: "100.00"}, 			 {name: "Ejemplo5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum veniam modi dolores.", image:"1.jpg" , id: "", price: "100.00"}, 			  {name: "Ejemplo6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, 	   {name: "Ejemplo7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, 		{name: "Ejemplo8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"},]
 / Hash para los ingredientes
 -ingredients= ["Sedis", "Asseces", "Enducipsam", "Es dem si", "Ut quiam", "Sectium"]
 
@@ -27,11 +27,16 @@
 		.col-xs-12.remove-padding
 			%img.logo#responsive-logo{:src => "/images/ob1.png", :alt => ""}/
 			%nav.roboto.navigation.right.top.fixed#responsive-nav
-				%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
 				%ul.list-inline
 					-menu.each do |item|
 						%li
 							%a{:href => "#{item[:url]}"}= item[:name]
+					%li#order
+						.div
+							%h4.remove-margin.roboto{style: "display: inline"} ORDENAR
+							%i.glyphicon.glyphicon-shopping-cart
+							
+				%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
 
 	/ Encabezado de la categoria
 	.row.full-width.remove-margin.center-xs
@@ -68,7 +73,7 @@
 			.col-lg-11.col-xs-12.remove-padding.food-order{style: "background-color: rgba(0, 0, 0, 0.90)"}
 				.row.full-width.remove-margin.end-xs
 					.col-xs-12
-						%i.glyphicon.white.subtittle.glyphicon-remove.medium-padding#close{:id => "#{index}"}
+						%i.glyphicon.white.subtittle.glyphicon-remove#close{:id => "#{index}"}
 				.row.full-width.full-height.remove-margin
 					.col-lg-6.col-sm-6.col-xs-12#food-order
 						/ Boton ORDENAR

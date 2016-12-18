@@ -1,7 +1,7 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
--menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"#"}]
+-menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"../contact/contact.html"}]
 / Se crea un hash para los titulos y descripciones de cada categoria
--menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"breakfast.html"}, {name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, {name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}]
+-menu_categories= [{name: "Desayunos", image:"ctg01.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"breakfast.html"}, 									{name: "Comidas", image:"ctg02.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, 																   {name: "Cenas", image:"ctg03.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, 																	{name: "Especiales", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, 										   							  {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, 																	 {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, 																	{name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}, 																   {name: "Ejemplo", image:"ctg04.jpg", description:"SORPRENDETE CON NUESTROS DELICIOSOS PLATILLOS", url:"#"}]
 
 <!DOCTYPE html>
 %html{class:"no-js", lang: "es"}
@@ -25,11 +25,16 @@
 		.col-xs-12.remove-padding
 			%img.logo#responsive-logo{:src => "/images/ob1.png", :alt => ""}/
 			%nav.roboto.navigation.right.top.fixed#responsive-nav
-				%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
 				%ul.list-inline
 					-menu.each do |item|
 						%li
 							%a{:href => "#{item[:url]}"}= item[:name]
+					%li#order
+						.div
+							%h4.remove-margin.roboto{style: "display: inline"} ORDENAR
+							%i.glyphicon.glyphicon-shopping-cart
+							
+				%i.glyphicon.glyphicon-menu-hamburger.white.subtittle.glyphicon-remove#responsive-icon
 
 	/ Categorias
 	.row-full-width.remove-margin.center-xs

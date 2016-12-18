@@ -19,7 +19,7 @@ function toggleFood(id) {
 
 	$("#plate_"+id).on("click",function(){
 		$("#id_"+id).animate({
-			top: "10%"
+			top: "11%"
 		}, "slow")
 		//$("#id_0").toggleClass("hidden")
 	})

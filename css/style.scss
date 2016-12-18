@@ -119,13 +119,16 @@ html, body {
         padding-right: 2.5em;
         transition: all 0.4s;
         &:hover{
+            a{
+                @extend .black
+            }
             background-color: rgba(255,255,255,0.8);
         }
         a{
             @extend .white;
             &:hover{
                 text-decoration: none;
-                @extend .black
+                
             }
         }
     }
@@ -182,8 +185,7 @@ html, body {
     height: 80%;
 }
 .food-order{
-    height: 95%;
-    border-radius: 15px;
+    height: 100%;
 }
 .order-button{
     margin-top: 8px;
@@ -218,6 +220,9 @@ html, body {
     width: 100%;
     top: 100%;
     //bottom: -100%;
+}
+.order{
+    right: 5em;
 }
 /* ID'S */
 #food-ingredient{
@@ -258,7 +263,27 @@ html, body {
 #special-menu-padding{
     padding-top: 1.5em;
 }
+#gallery{
 
+}
+#contact-text{
+    padding-left: 10%;
+    p{
+        margin: 0;
+    }
+}
+#leave-message{
+    margin-top: 3em;
+    padding: 10px 10px;
+    border: RGBA(210, 188, 62, 1.00) 2px solid;
+}
+#order{
+    background-color: RGBA(255, 235, 80, 1.00);
+    &:hover{
+        background-color: rgba(0,0,0,1.0);
+        color: RGBA(255, 235, 80, 1.00);
+    }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -290,6 +315,9 @@ html, body {
 .center-text{
     text-align: center;
 }
+.left-text{
+    text-align: left;
+}
 .right-text{
     text-align: right;
 }
@@ -298,6 +326,12 @@ html, body {
 }
 .black{
     color: rgb(0,0,0);
+}
+.yellow{
+    color: RGBA(210, 188, 62, 1.00);
+}
+.gray{
+    color: RGBA(168, 168, 168, 1.00);
 }
 .subtittle{
     font-size: 2.5em;
@@ -357,7 +391,7 @@ html, body {
     top: 1.5em;
 }
 .right{
-    right: 20em;
+    right: 10em;
 }
 .left{
     left: 1em;
@@ -376,6 +410,9 @@ html, body {
 }
 .z-index{
     z-index: 100;
+}
+.inline{
+    display: inline-block;
 }
 
 /* Cursores */
@@ -462,9 +499,21 @@ html, body {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
+@media only screen and (max-width: 767px){
 
+}
+@media only screen and (max-width: 385px){
+    .logo{
+        width: 200px;
+        height: 60px;
+        padding-left: 0.5em;
+        padding-top: 5px;
+        padding-bottom: 0px;
+    }
+}
 @media only screen and (max-width: 1178px){
     #responsive-nav{
+        right: 20em;
         ul{
             position: fixed;
             width: 100%;
@@ -503,6 +552,9 @@ html, body {
     }
     #food-order{
         padding: 0px 5px;
+    }
+    #contact-text{
+        padding-left: 5%;
     }
     .order-button{
         i{
