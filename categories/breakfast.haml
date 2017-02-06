@@ -1,5 +1,5 @@
 / Se crea un hash para contener los titulos de la barra de navegacion
--menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "RESERVATION", url:"#"}, {name: "CONTACT", url:"../contact/contact.html"}]
+-menu= [{name: "HOME", url:"../index.html"},{name: "GALLERY", url:"#"},{name: "NEWS", url:"#"},{name: "MENU", url:"../categories/categories.html"}, {name: "CONTACT", url:"../contact/contact.html"}]
 / Se crea un hash que contendra la imagen y el id de cada platillo de la categoria
 -plates= [{name: "Ejemplo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, architecto temporibus possimus!", image:"1.jpg" , id: "", price: "100.00"}, 																			  {name: "Ejemplo2", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aperiam repellendus optio.", image:"1.jpg" , id: "", price: "100.00"}, 		   {name: "Ejemplo3", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit excepturi, soluta velit.", image:"1.jpg" , id: "", price: "100.00"}, 	{name: "Ejemplo4", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae, mollitia velit.", image:"1.jpg" , id: "", price: "100.00"}, 			 {name: "Ejemplo5", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum veniam modi dolores.", image:"1.jpg" , id: "", price: "100.00"}, 			  {name: "Ejemplo6", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, 	   {name: "Ejemplo7", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"}, 		{name: "Ejemplo8", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur impedit officiis nulla.", image:"1.jpg" , id: "", price: "100.00"},]
 / Hash para los ingredientes
@@ -47,7 +47,7 @@
 	.row.full-width.remove-margin.center-xs
 		.col-xs-11.remove-padding.special-menu#special-menu{style: "background-image: url(../images/f1.jpeg);"}
 			.div.padding-top.white
-				%h2.title.remove-margin.medium-letter-spacing#special-menu-padding DESAYUNOS
+				%h2.title.remove-margin.medium-letter-spacing.responsive-title#special-menu-padding DESAYUNOS
 				%h3.dancing-script.remove-margin.small-padding.small-letter-spacing.padding-bottom Pollo a la parrilla
 				%p.roboto.white.medium.remove-margin.large-padding.small-letter-spacing.flag{style: "background-image: url(/images/flag01.png);"} ESPECIAL DE DESAYUNO
 
@@ -69,30 +69,31 @@
 	/ Descripción para cada platillo
 	-index= 0
 	-plates.each do |plate|
-		.row.full-width.full-height.remove-margin.center-lg.plate#id{:id => "#{index}"}
+		.row.full-height.remove-margin.center-lg.plate#id{:id => "#{index}"}
 			.col-lg-11.col-xs-12.remove-padding.food-order{style: "background-color: rgba(0, 0, 0, 0.90)"}
 				.row.full-width.remove-margin.end-xs
 					.col-xs-12
 						%i.glyphicon.white.subtittle.glyphicon-remove#close{:id => "#{index}"}
 				.row.full-width.full-height.remove-margin
 					.col-lg-6.col-sm-6.col-xs-12#food-order
+						/ Imagen del platillo
+						.food-image{style: "background-image: url(../images/Food/Breakfast/#{plate[:image]})"}
+						.screen.hidden
+							/ Nombre del platillo
+							.food-name
+								%h3.center-text.white.medium-letter-spacing#food-name #{plate[:name]}
+							/ Descripción del platillo
+							.food-description
+								%p.white.open-sans#padding-top #{plate[:description]}
+
+					.col-lg-6.col-sm-6.col-xs-12
+						/ Precio del platillo
+						.food-pricing#padding-top
+							%p.open-sans.center-text.white PRECIO: $#{plate[:price]}
 						/ Boton ORDENAR
 						.order-button
 							%i.glyphicon.glyphicon-log-in.medium
 							%p.open-sans.medium.center-text.remove-margin#order-button ORDENAR
-						/ Imagen del platillo
-						.food-image{style: "background-image: url(../images/Food/Breakfast/#{plate[:image]})"}
-						/ Precio del platillo
-						.food-pricing#padding-top
-							%p.open-sans.center-text.white PRECIO: $#{plate[:price]}
-
-					.col-lg-6.col-sm-6.col-xs-12
-						/ Nombre del platillo
-						.food-name
-							%h3.flag.center-text.white.medium-letter-spacing#food-name{style: "background-image: url(/images/flag01.png);"} #{plate[:name]}
-						/ Descripción del platillo
-						.food-description
-							%p.white.open-sans#padding-top #{plate[:description]}
 						/ Ingredientes
 						.food-ingredients
 							%h4.flag.center-text.white.small-letter-spacing#food-ingredient{style: "background-image: url(/images/flag03.png);"} INGREDIENTS

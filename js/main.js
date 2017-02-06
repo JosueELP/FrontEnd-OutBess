@@ -13,6 +13,8 @@ $(document).ready(function () {
 	toggleFood(5)
 	toggleFood(6)
 	toggleFood(7)
+	//se llama la funcion para la orden del platillo
+	toggleOrder()
 });
 //Funcion para cada descripcion del platillo
 function toggleFood(id) {
@@ -28,5 +30,19 @@ function toggleFood(id) {
 			top: "100%"
 		}, "slow")
 		//$("#id_0").toggleClass("hidden")
+	})
+}
+function toggleOrder() {
+	//funcion para abrir la ventana de la orden
+	$("#order").on("click",function(){
+		$("#order_page").animate({
+			top: "11%"
+		}, "slow")
+	})
+	//funcion para cerrar la ventana de la order
+	$("#close").on("click",function(){
+		$("#order_page").animate({
+			top: "100%"
+		}, "slow")
 	})
 }
