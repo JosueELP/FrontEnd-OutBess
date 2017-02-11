@@ -596,6 +596,12 @@ html, body {
   }
 }
 
+@media only screen and (max-width: 420px) {
+  .title {
+    font-size: 4em;
+  }
+}
+
 @media only screen and (max-width: 385px) {
   .logo {
     width: 200px;
