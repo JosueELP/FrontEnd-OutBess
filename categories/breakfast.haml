@@ -78,38 +78,38 @@
 					.col-lg-6.col-sm-6.col-xs-12#food-order
 						/ Imagen del platillo
 						.food-image{style: "background-image: url(../images/Food/Breakfast/#{plate[:image]})"}
-						.screen.hidden
-							/ Nombre del platillo
-							.food-name
-								%h3.center-text.white.medium-letter-spacing#food-name #{plate[:name]}
-							/ Descripción del platillo
-							.food-description
-								%p.white.open-sans#padding-top #{plate[:description]}
-
-					.col-lg-6.col-sm-6.col-xs-12
 						/ Precio del platillo
 						.food-pricing#padding-top
 							%p.open-sans.center-text.white PRECIO: $#{plate[:price]}
+
+					.col-lg-6.col-sm-6.col-xs-12
 						/ Boton ORDENAR
 						.order-button
 							%i.glyphicon.glyphicon-log-in.medium
 							%p.open-sans.medium.center-text.remove-margin#order-button ORDENAR
+						/ Nombre del platillo
+						.food-name
+							%h3.center-text.white.medium-letter-spacing#food-name #{plate[:name]}
+						/ Descripción del platillo
+						.food-description
+							%p.white.open-sans#padding-top #{plate[:description]}
 						/ Ingredientes
-						.food-ingredients
-							%h4.flag.center-text.white.small-letter-spacing#food-ingredient{style: "background-image: url(/images/flag03.png);"} INGREDIENTS
-							.row.full-width.full-height.remove-margin#padding-top
-								.col-xs-6
-									-ingredients.each do |ingredient|
-										%p.white.small-letter.spacing.open-sans.right-text.title-text= ingredient
-								.col-xs-6
-									-ingredients.each do |ingredient2|
-										.row.full-width.remove-margin.middle-xs.ingredient-background{style: "margin-bottom: 10px"}
-											.col-xs-2
-												%i.glyphicon.glyphicon-plus-sign
-											.col-xs-8
-												%p.remove-margin.center-text AGREGAR
-											.col-xs-2
-												%i.glyphicon.glyphicon-minus-sign
+						.screen.hidden
+							.food-ingredients
+								%h4.flag.center-text.white.small-letter-spacing#food-ingredient{style: "background-image: url(/images/flag03.png);"} INGREDIENTS
+								.row.full-width.full-height.remove-margin#padding-top
+									.col-xs-6
+										-ingredients.each do |ingredient|
+											%p.white.small-letter.spacing.open-sans.right-text.title-text= ingredient
+									.col-xs-6
+										-ingredients.each do |ingredient2|
+											.row.full-width.remove-margin.middle-xs.ingredient-background{style: "margin-bottom: 10px"}
+												.col-xs-2
+													%i.glyphicon.glyphicon-plus-sign
+												.col-xs-8
+													%p.remove-margin.center-text AGREGAR
+												.col-xs-2
+													%i.glyphicon.glyphicon-minus-sign
 						-index+=1
 
 	/ JQUERY and JavaScript
